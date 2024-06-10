@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 58px;
+          height: 30px;
+        }
+        
+        .switch input { 
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #696871;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+        
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 2px;
+          bottom: 2px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+        
+        input:checked + .slider {
+          background-color: #000;
+        }
+        
+        input:focus + .slider {
+          box-shadow: 0 0 1px #000;
+        }
+        
+        input:checked + .slider:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+        }
+        
+        /* Rounded sliders */
+        .slider.round {
+          border-radius: 34px;
+        }
+        
+        .slider.round:before {
+          border-radius: 50%;
+        }
+      </style>
+
+    <title>Kuju | Home</title>
+</head>
+<body>
+    <div class="relative">
+        <div class="grid grid-flow-col justify-between p-4 lg:p-8 lg:px-16 items-center max-w-screen-2xl mx-auto w-full">
+            <span class="text-[37px] font-bold">KUJU</span>
+            <div class="hidden lg:grid grid-flow-col items-center">
+                <a href="https://app.usetalon.com/login" class="p-3 px-6 font-semibold">Home</a>
+                <a href="https://app.usetalon.com/login" class="p-3 px-3 font-semibold">Aggregators</a>
+            </div>
+            <div class="grid items-center gap-2 grid-flow-col">
+                <a href="https://app.usetalon.com/login" class="p-3 px-6 hidden lg:block font-semibold">Login</a>
+                <a href="https://app.usetalon.com/register" class="text-white font-semibold bg-black p-3 px-6 rounded-full">Create Account</a>
+            </div>
+        </div>
+        <div class="flex items-center flex-col-reverse lg:flex-row p-4 lg:p-8 lg:px-16 justify-between max-w-screen-2xl mx-auto w-full">
+            <div class="grid">
+                <span class="text-[28px] mt-6 lg:mt-0 capitalize leading-[1.2] lg:leading-[1] lg:text-[60px] w-full font-bold">Transforming <br class="hidden lg:block"> agriculture using data</span>
+                <span class="w-full max-w-[600px] my-8">Access financing, crop protection with personalized insurance, best quality seeds for production, and tractor services through our strategic partnerships —all tailored to you as a grower through our AI-driven platform.</span>
+                <a href="https://app.usetalon.com/register" class="text-white font-semibold bg-black p-3 px-6 rounded-full w-fit">Start using Kuju today</a>
+            </div>
+            <img src="./images/hero.svg" alt="Kuju" class="lg:h-[612px] w-[612px] grayscale">
+        </div>
+            
+    </div>
+
+    <div id="targetDiv" class="grid my-[63px] py-16 lg:pb-32 bg-black w-full">
+        <span class="text-center text-white font-bold text-[20px] lg:text-[28px] w-full capitalize">What you get</span>
+        <div class="grid px-4 lg:py-12 justify-center items-stretch content-stretch max-w-screen-xl mx-auto mt-2 lg:mt-[32px] lg:grid-cols-2 gap-8">
+            <div class="grid w-full rounded-[20px] shadow-lg bg-white p-6">
+                <div class="grid grid-flow-col justify-between content-center items-center w-full">
+                    <div class="grid grid-flow-col content-start items-center gap-4">
+                        <img src="images/source1.svg" class="h-[34px] w-[34px]" alt="">
+                        <span class="text-black font-medium text-[18px]">As a grower</span> 
+                    </div>
+                    <span class="bg-black text-[white] text-[16px] p-2 px-3 rounded-full w-fit leading-[1]">1</span>
+                </div>
+                <span class="max-w-[490px] text-[14px] mt-2 text-[#404053]">
+                    <strong>Maximize farm success</strong>: Improve yields and efficiency with data-driven practices and access to premium supplies, while protecting your investment through partner insurance and capital solutions.
+                </span>
+            </div>
+
+            <div class="grid w-full rounded-[20px] shadow-lg bg-white p-4 py-6">
+                <div class="grid grid-flow-col justify-between content-start items-start w-full">
+                    <div class="grid grid-flow-col content-start items-center gap-4">
+                        <img src="images/source2.svg" class="h-[34px] w-[34px]" alt="">
+                        <span class="text-black font-medium text-[18px]">As a lender</span>
+                    </div>
+                    <span class="bg-black text-[white] text-[16px] p-2 px-3 rounded-full w-fit leading-[1]">2</span>
+                </div>
+                <span class="max-w-[490px] text-[14px] mt-2 text-[#404053]">
+                    <strong>Expand portfolio & reduce risk</strong>: Reach new borrowers, verify identities with KYC data, and leverage farm data for smarter loan decisions that boost recovery rates.
+                </span>
+            </div>
+            <div class="grid w-full rounded-[20px] shadow-lg bg-white p-4 py-6">
+                <div class="grid grid-flow-col justify-between content-center items-center w-full">
+                    <div class="grid grid-flow-col content-start items-center gap-4">
+                        <img src="images/source3.svg" class="h-[34px] w-[34px]" alt="">
+                        <span class="text-black font-medium text-[18px]">As an input provider</span>
+                    </div>
+                    <span class="bg-black text-[white] text-[16px] p-2 px-3 rounded-full w-fit leading-[1]">3</span>
+                </div>
+                <span class="max-w-[490px] text-[14px] mt-2 text-[#404053]">
+                   <strong>Grow your business and meet farmer needs</strong>: Collaborate with growers to reach new customers, boost sales, and develop data-driven solutions that address their specific requirements.
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid my-[63px] p-4 lg:p-0 w-full">
+        <span class="text-center font-bold text-[20px] lg:text-[28px] w-full">Aggregators: Empowering Farmers for <br class="hidden lg:block"> Collective Growth </span>
+        <div class="grid justify-center items-center content-center max-w-screen-xl mx-auto lg:mt-[20px] lg:grid-cols-2 gap-8">
+            <img src="images/aggregator.svg" class="mx-auto lg:mx-[unset] grayscale" alt="Boost">
+            <div class="grid gap-8 p-4 lg:p-0">
+                <div class="grid content-start items-start">
+                    <div class="mt-4 gap-[17px] grid grid-flow-col justify-between content-center items-center">
+                        <span class="font-bold text-[28px]">About Our Aggregators:</span>
+                        <img src="images/star.svg" class="h-[14px] w-[14px] grayscale" alt="">
+                    </div>
+                    <span class="text-[18px] mt-2">
+                        Like a farming partner, aggregators organize local farmers. They secure a steady flow of supplies, ensure quality, and manage loans. By supporting the community, they improve their personal revenue and the farming community .
+                    </span>
+                </div>
+                <a href="https://app.usetalon.com/register" class="text-white font-semibold bg-black p-3 px-6 mt-4 lg:mt-10 rounded-full max-w-[200px] w-full text-center">See more</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid my-[100px] w-full">
+        <span class="text-center font-bold text-[20px] lg:text-[28px] w-full">Better Data and Simple Processes</span>
+        <div class="grid items-start content-start max-w-screen-xl w-full px-4 lg:p-0 lg:mx-auto mt-[53px] gap-8">
+            <div class="flex gap-4">
+                <div class="grid max-w-[354px] w-full content-start items-start rounded-lg bg-[#F2F2F2] px-6 py-8">
+                    <span class="font-semibold text-[28px] leading-[1.2]">Digital <br class="hidden lg:block"> Extension Service</span>
+                    <span class="tracking-[8%] mt-4">Our digital extension service, Kuju, provides on-the-spot advice for farmers. Get info on best practices, and more, all digitally. Use data insights from Kuju to improve your farm's yield and income.</span>
+                    <a href="https://app.usetalon.com/register" class="text-white text-[15px] font-semibold bg-black p-3 px-6 mt-4 lg:mt-12 rounded-full w-fit text-center">Get started with Kuju</a>
+                </div>
+                <img src="./images/better1.svg" class="rounded-lg grayscale w-full object-cover object-top hidden lg:block" alt="Service 1">
+            </div>
+            <div class="flex gap-4">
+                <img src="./images/better2.svg" class="rounded-lg grayscale object-cover w-full object-top hidden lg:block" alt="Service 1">
+                <div class="grid max-w-[354px] w-full content-start items-start rounded-lg bg-[#F2F2F2] px-6 py-8">
+                    <span class="font-semibold text-[28px] leading-[1.2]">Market Access</span>
+                    <span class="tracking-[8%] mt-4">Kuju offers a reliable system that simplifies selling for farmers. With Kuju's B2B marketplace, farmers connect with buyers directly, allowing them to focus on growing quality crops.</span>
+                    <a href="https://app.usetalon.com/register" class="text-white text-[15px] font-semibold bg-black p-3 px-6 mt-4 lg:mt-12 rounded-full w-fit text-center">Get started with Kuju</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid bg-black w-full lg:justify-center lg:content-center lg:items-center p-4 py-10 lg:p-16">
+        <img src="./images/kuju.svg" class="h-[384px] w-full max-w-[750px] lg:block" alt="">
+    </div>
+
+    <div class="grid w-full lg:justify-center lg:content-center lg:items-center p-4 py-10 lg:p-20">
+        <span class="text-[28px] font-bold">Empowering Farmers, Enabling Growth</span>
+        <a href="https://app.usetalon.com/register" class="text-white font-semibold bg-black p-3 px-6 rounded-full w-fit mx-auto mt-4">Start using Kuju today</a>
+    </div>
+    
+
+    <footer class="grid bg-black text-white py-12">
+        <div class="grid gap-16 lg:grid-flow-col justify-between max-w-screen-xl mx-auto w-full p-4">
+            <div class="grid content-start items-start">
+                <span class="text-xl font-bold">KUJU</span>
+                <span class="max-w-[364px] mt-4 leading-[22px] font-light">
+                    Helping farmers farm better with tailored agricultural expertise and access to market
+                </span>
+            </div>
+
+            <div class="grid items-start content-start gap-3">
+                <span class="font-medium">About us</span>
+                <div class="grid">
+                    <a href="/src/docs/tc.pdf" target="_blank" class="font-light">Terms of use</a>
+                    <!-- <span class="font-light">Hitchikers</span>
+                    <span class="font-light">Privacy</span>
+                    <span class="font-light">FAQ</span> -->
+                </div>
+            </div>
+
+            <div class="grid items-start content-start gap-3 lg:max-w-[300px]">
+                <span class="font-medium">Contact</span>
+                <span class="font-light mt-4 lg:mt-0">🇳🇬 6, Ojora Close, Victoria Island, Lagos, Nigeria</span>
+                <span class="font-light">🇰🇪 Ground Floor, The Address Building, Muthangari Drive Westlands, Nairobi, Kenya</span>
+                <!-- <div class="grid mt-8 grid-flow-col lg:pr-4 justify-self-end gap-4">
+                    <img src="./images/inst.svg" class="h-[30px] lg:h-[45px] w-[30px] lg:w-[45px]" />
+                    <img src="./images/x.svg" class="h-[30px] lg:h-[45px] w-[30px] lg:w-[45px]" />
+                    <img src="./images/facebook.svg" class="h-[30px] lg:h-[45px] w-[30px] lg:w-[45px]" />
+                </div> -->
+            </div>
+        </div>
+    </footer>
+    <script>
+        function scrollToDiv() {
+          var targetDiv = document.getElementById('targetDiv');
+          if (targetDiv) {
+            targetDiv.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/65a66f6d8d261e1b5f53e86c/1hk926h15';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <script>
+        const checkbox = document.getElementById('myCheckbox');
+        const ngnDiv = document.getElementById('ngnSubs')
+        const kesDiv = document.getElementById('kesSubs')
+
+        // Add event listener to the checkbox
+        checkbox.addEventListener('change', function() {
+            // Check if the checkbox is checked
+            if (this.checked) {
+                // Change the output text when checkbox is checked
+                ngnDiv.style.display = 'none';
+                kesDiv.style.display = 'grid';
+            } else {
+                // Change the output text when checkbox is unchecked
+                ngnDiv.style.display = 'grid';
+                kesDiv.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
