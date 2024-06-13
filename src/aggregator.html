@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 58px;
+          height: 30px;
+        }
+        
+        .switch input { 
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+        
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #696871;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+        
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 2px;
+          bottom: 2px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+        
+        input:checked + .slider {
+          background-color: #000;
+        }
+        
+        input:focus + .slider {
+          box-shadow: 0 0 1px #000;
+        }
+        
+        input:checked + .slider:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+        }
+        
+        /* Rounded sliders */
+        .slider.round {
+          border-radius: 34px;
+        }
+        
+        .slider.round:before {
+          border-radius: 50%;
+        }
+      </style>
+
+    <title>Kuju | Aggregators</title>
+</head>
+<body>
+    <div class="relative">
+        <div class="grid grid-flow-col text-white z-50 justify-between p-4 lg:p-8 lg:px-16 items-center max-w-screen-2xl mx-auto w-full">
+            <span class="text-[37px] font-bold">KUJU</span>
+            <div class="hidden lg:grid grid-flow-col items-center">
+                <a href="index.html" class="p-3 px-6 font-semibold">Home</a>
+                <a href="aggregator.html" class="p-3 px-3 font-semibold">Aggregators</a>
+            </div>
+            <div class="grid items-center gap-2 grid-flow-col">
+                <a href="https://app.farmz2u.com/login" class="p-3 px-6 hidden lg:block font-semibold">Login</a>
+                <a href="https://app.farmz2u.com/register" class="text-black font-semibold bg-white p-3 px-6 text-[14px] lg:text-[16px] rounded-full">Create Account</a>
+            </div>
+        </div>
+        <div class="-mt-[100px] lg:-mt-[350px] pb-[100px] lg:pb-[350px] z-10 flex items-center flex-col py-[180px] px-4 lg:px-[unset] lg:p-8 lg:py-32 lg:pt-[500px] text-white bg-black mx-auto w-full">
+            <span class="font-semibold text-[24px] lg:text-[80px] uppercase text-center max-w-[1143px] leading-[1.2] w-full mx-auto">Join our aggregator network</span>
+            <span class="font-light text-[14px] lg:text-[22px] text-center mt-4">Unlock more opportunities and empower farmers with our aggregator network</span>
+            <svg onclick="scrollToDiv()" class="hidden lg:grid hover:animate-none absolute bottom-28 cursor-pointer left-0 right-0 mx-auto animate-bounce" width="50" height="50" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                <g opacity="0.4">
+                <path d="M12 8.5V14.5" stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 12.5L12 15.5L15 12.5" stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+            </svg>
+        </div>
+            
+    </div>
+
+    <div id="targetDiv" class="grid lg:mt-[63px] py-16 px-4 lg:px-[unset] w-full">
+        <span class="text-center font-bold text-[20px] lg:text-[32px] w-full capitalize">Aggregator Benefits</span>
+        <span class="text-center max-w-[700px] mx-auto mt-4 w-full">Check out our aggregator benefits: ranging from incentives to a impact in the ecosystem, possibilities are endless</span>
+        <div class="grid mt-20 lg:grid-cols-3 gap-y-16 gap-x-4 max-w-screen-lg items-start mx-auto w-full">
+            <div class="grid gap-2 lg:px-4">
+                <img src="./images/ben1.svg" class="h-[30px] w-[31px]" alt="">
+                <span class="font-bold mt-6 text-[18px]">Performance-based incentives</span>
+                <p class="text-[#52525B] lg:max-w-[297px]">Meeting targets like increased farm productivity will lead to bonuses or profit-sharing.</p>
+            </div>
+            <div class="grid gap-2 lg:px-8 lg:border-l-[1px] lg:border-r-[1px]">
+                <img src="./images/ben2.svg" class="h-[30px] w-[31px]" alt="">
+                <span class="font-bold mt-6 text-[18px]">Attend workshops</span>
+                <p class="text-[#52525B] lg:max-w-[297px]">Engage in workshops focusing on the agricultural technologies, sustainable farming practices, and advancements in supply chain development to expand your knowledge to better help your cluster.</p>
+            </div>
+            <div class="grid gap-2 lg:px-4">
+                <img src="./images/ben3.svg" class="h-[30px] w-[31px]" alt="">
+                <span class="font-bold mt-6 text-[18px]">Agronomy expertise</span>
+                <p class="text-[#52525B] lg:max-w-[297px]">Gain experience in various agricultural practices across your cluster, becoming familiar with diverse crops, soil conditions, and farming techniques.</p>
+            </div>
+            <div class="grid gap-2 lg:px-4">
+                <img src="./images/ben4.svg" class="h-[30px] w-[31px]" alt="">
+                <span class="font-bold mt-6 text-[18px]">Build a farmer network</span>
+                <p class="text-[#52525B] lg:max-w-[297px]">Establish strong relationships with growers, other aggregators and potential suppliers creating a valuable network.</p>
+            </div>
+            <div class="grid gap-2 lg:px-8 lg:border-l-[1px] lg:border-r-[1px]">
+                <img src="./images/ben5.svg" class="h-[30px] w-[31px]" alt="">
+                <span class="font-bold mt-6 text-[18px]">Empowering farmers</span>
+                <p class="text-[#52525B] lg:max-w-[297px]">Have a deep sense of satisfaction helping farmers overcome challenges, secure financing, and access resources.</p>
+            </div>
+            <div class="grid gap-2 lg:px-4">
+                <img src="./images/ben6.svg" class="h-[30px] w-[31px]" alt="">
+                <span class="font-bold mt-6 text-[18px]">Building a sustainable food system</span>
+                <p class="text-[#52525B] lg:max-w-[297px]">Contribute to a more secure, efficient and profitable food supply chain in your region. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid lg:gap-16 p-4 mt-2 items-start content-start lg:my-[100px] lg:flex max-w-screen-lg w-full mx-auto justify-between">
+        <img src="./images/aggr.svg" class="max-w-[538px] max-h-[485px] w-full h-full grayscale" alt="">
+        <div class="grid">
+            <div class="grid mt-8 lg:mt-0">
+                <span class="text-[#64748B]">Aggregator Stories</span>
+                <span class="font-semibold leading-[1.2] mt-2 text-[20px] lg:text-[32px]">Everyone's a winner with Kuju!</span>
+                <span class="max-w-[466px] w-full mt-4 lg:my-6 leading-1">“Since I signed up as an aggregator on Kuju, it’s been smooth sailing, no challenges to report and I look forward to more business ahead.”</span>
+            </div>
+            <div class="max-w-[500px] mt-10 flex justify-between lg:justify-start pb-12 lg:pb-4 border-b-[1px] items-start content-start">
+                <span class="font-semibold">Esther Kagoura</span>
+                <span class="text-[#64748B] lg:ml-12">Aggregator, Kenya</span>
+            </div>
+            <div class="hidden lg:flex cursor-pointer mt-8 lg:mt-28 justify-start items-start content-start">
+                <span class="font-semibold">Become an aggregator</span>
+                <img src="./images/become.svg" class="ml-4" alt="">
+            </div>
+        </div>
+    </div>
+    
+
+    <footer class="grid bg-black text-white py-12">
+        <div class="grid gap-16 lg:grid-flow-col justify-between max-w-screen-xl mx-auto w-full p-4">
+            <div class="grid content-start items-start">
+                <span class="text-xl font-bold">KUJU</span>
+                <span class="max-w-[364px] mt-4 leading-[22px] font-light">
+                    Helping farmers farm better with tailored agricultural expertise and access to market
+                </span>
+            </div>
+
+            <div class="grid items-start content-start gap-3">
+                <span class="font-medium">About us</span>
+                <div class="grid">
+                    <a href="/src/docs/tc.pdf" target="_blank" class="font-light">Terms of use</a>
+                    <!-- <span class="font-light">Hitchikers</span>
+                    <span class="font-light">Privacy</span>
+                    <span class="font-light">FAQ</span> -->
+                </div>
+            </div>
+
+            <div class="grid items-start content-start gap-3 lg:max-w-[300px]">
+                <span class="font-medium">Contact</span>
+                <span class="font-light mt-4 lg:mt-0">🇳🇬 6, Ojora Close, Victoria Island, Lagos, Nigeria</span>
+                <span class="font-light">🇰🇪 Ground Floor, The Address Building, Muthangari Drive Westlands, Nairobi, Kenya</span>
+                <!-- <div class="grid mt-8 grid-flow-col lg:pr-4 justify-self-end gap-4">
+                    <img src="./images/inst.svg" class="h-[30px] lg:h-[45px] w-[30px] lg:w-[45px]" />
+                    <img src="./images/x.svg" class="h-[30px] lg:h-[45px] w-[30px] lg:w-[45px]" />
+                    <img src="./images/facebook.svg" class="h-[30px] lg:h-[45px] w-[30px] lg:w-[45px]" />
+                </div> -->
+            </div>
+        </div>
+    </footer>
+    <script>
+        function scrollToDiv() {
+          var targetDiv = document.getElementById('targetDiv');
+          if (targetDiv) {
+            targetDiv.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/65a66f6d8d261e1b5f53e86c/1hk926h15';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <script>
+        const checkbox = document.getElementById('myCheckbox');
+        const ngnDiv = document.getElementById('ngnSubs')
+        const kesDiv = document.getElementById('kesSubs')
+
+        // Add event listener to the checkbox
+        checkbox.addEventListener('change', function() {
+            // Check if the checkbox is checked
+            if (this.checked) {
+                // Change the output text when checkbox is checked
+                ngnDiv.style.display = 'none';
+                kesDiv.style.display = 'grid';
+            } else {
+                // Change the output text when checkbox is unchecked
+                ngnDiv.style.display = 'grid';
+                kesDiv.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
